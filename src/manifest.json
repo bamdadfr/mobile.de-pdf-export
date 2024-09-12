@@ -1,0 +1,30 @@
+{
+  "name": "mobile.de PDF export",
+  "description": "mobile.de PDF export",
+  "version": "0.0.0",
+  "{{chrome}}.manifest_version": 3,
+  "{{firefox}}.manifest_version": 2,
+  "icons": {
+    "512": "icon.png"
+  },
+  "{{chrome}}.action": {
+    "default_popup": "src/popup.html"
+  },
+  "{{firefox}}.browser_action": {
+    "default_popup": "src/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://suchen.mobile.de/*"
+      ],
+      "js": [
+        "src/content.ts"
+      ]
+    }
+  ],
+  "permissions": [
+    "*://suchen.mobile.de/*",
+    "storage"
+  ]
+}

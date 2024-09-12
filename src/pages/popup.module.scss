@@ -1,0 +1,48 @@
+@import '../_colors.scss';
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  height: 100%;
+  width: 100%;
+
+  user-select: none;
+}
+
+@mixin common {
+  & {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+    padding: 12px 24px;
+    width: 180px;
+  }
+
+  &:hover {
+    cursor: pointer;
+    @include background(backgroundLight)
+  }
+}
+
+button {
+  @include common;
+  @include border;
+  @include color(primary);
+}
+
+select {
+  appearance: none;
+  text-align: center;
+
+  & > option {
+    font-size: 80%;
+  }
+
+  @include color(primary);
+  @include common;
+  @include border;
+}

@@ -1,0 +1,42 @@
+$lightMode: (
+  primary: black,
+  background: rgb(235, 235, 235),
+  backgroundLight: rgb(225, 225, 225),
+);
+
+$darkMode: (
+  primary: white,
+  background: rgb(36, 36, 36),
+  backgroundLight: rgb(46, 46, 46),
+);
+
+@mixin color($key) {
+  & {
+    color: map-get($lightMode, $key);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    color: map-get($darkMode, $key);
+  }
+}
+
+@mixin background($key) {
+  & {
+    background-color: map-get($lightMode, $key);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    background-color: map-get($darkMode, $key);
+  }
+}
+
+@mixin border {
+  & {
+    border: 1px solid map-get($lightMode, primary);
+    border-radius: 5px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    border: 1px solid map-get($darkMode, primary);
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "mobile-de-pdf-export",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:increment": "scripts/increment.sh"
+  },
+  "dependencies": {
+    "@sckt/translate": "^1.0.9",
+    "jspdf": "^2.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "translate": "^3.0.1"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin": "^2.8.0",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@types/webextension-polyfill": "^0.10.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.0.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "prettier": "^3.3.3",
+    "sass": "^1.78.0",
+    "sass-reset": "^1.0.4",
+    "typescript": "^5.3.2",
+    "vite": "^5.0.0",
+    "vite-plugin-web-extension": "^4.0.0",
+    "vite-tsconfig-paths": "^5.0.1",
+    "webextension-polyfill": "^0.10.0"
+  }
+}
