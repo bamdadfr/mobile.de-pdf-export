@@ -12,7 +12,22 @@ module.exports = {
     [
       '@semantic-release/exec',
       {
-        prepareCmd: 'pnpm build:increment ${nextRelease.version} && pnpm build',
+        prepareCmd: 'pnpm build:increment ${nextRelease.version} && pnpm build && pnpm build:zip ${nextRelease.version}',
+      },
+    ],
+    [
+      'semantic-release-chrome',
+      {
+        asset: 'mobile.de-pdf-export-${nextRelease.version}.zip',
+        extensionId: 'fnjfhjjofjobpefcbcajbbklljjhnnlm',
+      },
+    ],
+    [
+      '@semantic-release/github',
+      {
+        assets: [
+          'mobile.de-pdf-export-${nextRelease.version}.zip',
+        ],
       },
     ],
     [

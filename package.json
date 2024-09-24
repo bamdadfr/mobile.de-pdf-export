@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "build:increment": "scripts/increment.sh"
+    "build:increment": "scripts/increment.sh",
+    "build:zip": "scripts/zip.sh"
   },
   "dependencies": {
     "@sckt/translate": "^1.0.9",
