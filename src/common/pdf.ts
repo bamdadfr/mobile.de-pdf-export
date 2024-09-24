@@ -40,7 +40,7 @@ export class PDF {
 
   private readonly height: number = this.node.internal.pageSize.getHeight() - this.y;
 
-  private readonly font = 'Lato';
+  private readonly font = 'Lato'; // TODO: this prints warning in console
 
   private readonly weight = FONT_WEIGHTS.normal;
 
