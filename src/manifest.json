@@ -1,7 +1,7 @@
 {
   "name": "mobile.de PDF export",
   "description": "mobile.de PDF export",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "{{chrome}}.manifest_version": 3,
   "{{firefox}}.manifest_version": 2,
   "icons": {
