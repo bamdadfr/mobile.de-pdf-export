@@ -2,6 +2,7 @@ import type {AdProps, MobileProps} from 'src/common/ad.types';
 import {PDF} from 'src/common/pdf';
 import {Translator} from 'src/common/translator';
 import {FONT_SIZES} from 'src/constants';
+import {sanitizeFilename} from 'src/utils/sanitize-filename';
 
 export class Ad {
   private readonly props: AdProps;
@@ -12,8 +13,13 @@ export class Ad {
 
   public constructor() {
     this.props = this.parse();
-    this.name = `mobile.de - ${this.props.id} - ${this.price} - ${this.props.title}`;
+    this.name = `mobile.de - ${this.props.id} - ${this.price} - ${this.title}`;
+    console.log(this.name);
     this.pdf = new PDF(this.name);
+  }
+
+  private get title(): string {
+    return sanitizeFilename(this.props.title);
   }
 
   private get price(): string {
@@ -35,7 +41,7 @@ export class Ad {
   }
 
   private buildTitle(): void {
-    this.pdf.printTitle(this.props.title);
+    this.pdf.printTitle(this.title);
     this.pdf.printText(this.price);
 
     const address1 = this.props.contactInfo.address1
